@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Торт — Студия Галины Беляковой</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Raleway', sans-serif; background: #FAF7F2; color: #1a1a1a; overflow-x: hidden; }
+
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    overflow: hidden;
+    padding: 80px;
+    gap: 60px;
+    align-items: center;
+}
+.hero-content { position: relative; z-index: 10; padding-right: 40px; }
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 700;
+    line-height: 0.95;
+    color: #1a1a1a;
+    margin-bottom: 32px;
+    letter-spacing: -3px;
+}
+.hero-title .accent {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    color: #8B1A1A;
+    font-size: 1.15em;
+    display: block;
+    letter-spacing: 0;
+    margin-top: 8px;
+}
+.hero-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 48px;
+    max-width: 520px;
+    font-weight: 300;
+}
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn {
+    padding: 18px 40px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    border-radius: 50px;
+}
+.btn-primary { background: #8B1A1A; color: white; }
+.btn-primary:hover { background: #6B0F0F; transform: translateY(-3px); box-shadow: 0 15px 40px rgba(139,26,26,0.35); }
+.btn-outline { background: transparent; color: #1a1a1a; border: 1.5px solid #1a1a1a; }
+.btn-outline:hover { background: #1a1a1a; color: white; transform: translateY(-3px); }
+
+/* ===== PHOTO COMPOSITION ===== */
+.hero-visual { position: relative; height: 92vh; min-height: 700px; }
+.hero-photo-main {
+    position: absolute; top: 0; right: 0;
+    width: 80%; height: 85%;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.25);
+    z-index: 3;
+}
+.hero-photo-main img { width: 100%; height: 100%; object-fit: cover; transition: transform 8s ease; }
+.hero:hover .hero-photo-main img { transform: scale(1.08); }
+.hero-photo-secondary {
+    position: absolute; bottom: 30px; left: 0;
+    width: 50%; height: 50%;
+    overflow: hidden;
+    border: 10px solid #FAF7F2;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+    z-index: 4;
+}
+.hero-photo-secondary img { width: 100%; height: 100%; object-fit: cover; transition: transform 8s ease; }
+.hero:hover .hero-photo-secondary img { transform: scale(1.08); }
+.hero-decor-circle {
+    position: absolute; top: -80px; right: -80px;
+    width: 240px; height: 240px;
+    border: 1px solid rgba(139,26,26,0.2);
+    border-radius: 50%; z-index: 1;
+}
+.hero-decor-circle::before { content: ''; position: absolute; inset: 25px; border: 1px solid rgba(139,26,26,0.15); border-radius: 50%; }
+.hero-decor-line {
+    position: absolute; bottom: 100px; right: 120px;
+    width: 1px; height: 120px;
+    background: rgba(139,26,26,0.2); z-index: 2;
+}
+.hero-year {
+    position: absolute; bottom: 60px; right: 60px;
+    font-family: 'Playfair Display', serif;
+    font-size: 140px; font-weight: 700;
+    color: #8B1A1A; opacity: 0.08;
+    line-height: 1; z-index: 1; font-style: italic;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(250,247,242,0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(139,26,26,0.08);
+    transition: all 0.3s ease;
+}
+header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
+.header-inner {
+    max-width: 1400px; margin: 0 auto;
+    padding: 14px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: #8B1A1A; }
+.logo-circle {
+    width: 52px; height: 52px; border-radius: 50%;
+    border: 2px solid #8B1A1A;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; flex-shrink: 0;
+}
+.logo-circle::before { content: ''; position: absolute; inset: 3px; border-radius: 50%; border: 1px solid rgba(139,26,26,0.3); }
+.logo-text-icon { font-family: 'Great Vibes', cursive; font-size: 22px; color: #8B1A1A; }
+.logo-info { display: flex; flex-direction: column; }
+.logo-name { font-family: 'Great Vibes', cursive; font-size: 26px; color: #8B1A1A; line-height: 1; }
+.logo-sub { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #888; margin-top: 2px; }
+nav { display: flex; align-items: center; gap: 8px; }
+nav a {
+    text-decoration: none; color: #1a1a1a;
+    font-size: 13px; font-weight: 500; letter-spacing: 0.5px;
+    padding: 10px 18px; border-radius: 30px;
+    transition: all 0.3s ease;
+}
+nav a:hover { color: #8B1A1A; background: rgba(139,26,26,0.04); }
+.nav-order-btn { background: #8B1A1A !important; color: white !important; font-weight: 600 !important; padding: 12px 26px !important; }
+.nav-order-btn:hover { background: #6B0F0F !important; transform: translateY(-1px); }
+.burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+.burger span { width: 24px; height: 2px; background: #8B1A1A; transition: all 0.3s ease; border-radius: 2px; }
+.burger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.burger.active span:nth-child(2) { opacity: 0; }
+.burger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* ===== SECTIONS ===== */
+section { padding: 100px 40px; }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-label { display: inline-block; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #8B1A1A; margin-bottom: 16px; font-weight: 600; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 700; color: #1a1a1a; margin-bottom: 16px; }
+.section-subtitle { font-size: 16px; color: #777; max-width: 500px; margin: 0 auto; font-weight: 300; line-height: 1.6; }
+.divider { width: 60px; height: 1px; background: #8B1A1A; margin: 20px auto; opacity: 0.4; }
+
+/* ===== DESSERTS (BIG PHOTOS, NO HARD CROP) ===== */
+#desserts { background: white; }
+.desserts-container { max-width: 1400px; margin: 0 auto; }
+.dessert-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
+.dessert-tab {
+    padding: 12px 28px; border-radius: 30px;
+    border: 1.5px solid rgba(139,26,26,0.15);
+    background: transparent; color: #1a1a1a;
+    font-size: 13px; font-weight: 500;
+    cursor: pointer; transition: all 0.3s ease;
+    font-family: 'Raleway', sans-serif;
+}
+.dessert-tab:hover, .dessert-tab.active { background: #8B1A1A; color: white; border-color: #8B1A1A; }
+.subtabs-row { display: flex; justify-content: center; gap: 8px; margin-bottom: 40px; flex-wrap: wrap; min-height: 44px; }
+.subtab {
+    padding: 10px 24px; border-radius: 30px;
+    border: 1.5px solid rgba(139,26,26,0.12);
+    background: transparent; color: #777;
+    font-size: 12px; font-weight: 500;
+    cursor: pointer; transition: all 0.3s ease;
+    font-family: 'Raleway', sans-serif; letter-spacing: 0.5px;
+}
+.subtab:hover, .subtab.active { background: rgba(139,26,26,0.08); color: #8B1A1A; border-color: #8B1A1A; }
+.desserts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
+.dessert-card {
+    background: #FAF7F2; border-radius: 16px; overflow: hidden;
+    transition: all 0.35s ease; border: 1px solid rgba(139,26,26,0.06);
+    cursor: pointer;
+}
+.dessert-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(139,26,26,0.12); }
+.dessert-img {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+.dessert-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.5s ease; }
+.dessert-card:hover .dessert-img img { transform: scale(1.05); }
+.dessert-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 50%); }
+.dessert-badge {
+    position: absolute; top: 16px; left: 16px;
+    background: #8B1A1A; color: white;
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 20px; font-weight: 600;
+}
+.dessert-info { padding: 28px; }
+.dessert-info h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 10px; color: #1a1a1a; }
+.dessert-info p { font-size: 14px; color: #777; line-height: 1.6; font-weight: 300; }
+.dessert-price { margin-top: 16px; font-size: 13px; color: #8B1A1A; font-weight: 600; letter-spacing: 0.5px; }
+
+/* ===== FILLINGS (PHOTO LEFT + LIST RIGHT) ===== */
+#fillings { background: #FAF7F2; }
+.fillings-container { max-width: 1400px; margin: 0 auto; }
+.filling-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 48px; flex-wrap: wrap; }
+.filling-tab {
+    padding: 12px 28px; border-radius: 30px;
+    border: 1.5px solid rgba(139,26,26,0.15);
+    background: transparent; color: #1a1a1a;
+    font-size: 13px; font-weight: 500;
+    cursor: pointer; transition: all 0.3s ease;
+    font-family: 'Raleway', sans-serif;
+}
+.filling-tab:hover, .filling-tab.active { background: #8B1A1A; color: white; border-color: #8B1A1A; }
+.filling-content {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 60px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 500px;
+}
+.filling-photo-block { position: sticky; top: 120px; }
+.filling-photo-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    box-shadow: 0 20px 60px rgba(139,26,26,0.15);
+    position: relative;
+}
+.filling-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+.filling-photo-wrapper:hover img { transform: scale(1.05); }
+.filling-photo-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(139,26,26,0.1) 0%, transparent 40%);
+    pointer-events: none;
+}
+.filling-photo-decor {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1.5px solid rgba(139,26,26,0.2);
+    border-radius: 20px;
+    z-index: -1;
+}
+.filling-list-block { position: relative; padding: 20px 0; }
+.filling-list { list-style: none; padding: 0; margin: 0; }
+.filling-item {
+    display: flex;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(139,26,26,0.1);
+    transition: all 0.3s ease;
+    animation: fadeInRight 0.5s ease forwards;
+    opacity: 0;
+}
+.filling-item:last-child { border-bottom: none; }
+.filling-item:hover { padding-left: 10px; }
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+.filling-bullet {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(139,26,26,0.08);
+    border: 1.5px solid rgba(139,26,26,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+    transition: all 0.3s ease;
+}
+.filling-item:hover .filling-bullet {
+    background: #8B1A1A;
+    border-color: #8B1A1A;
+}
+.filling-bullet::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #8B1A1A;
+    transition: all 0.3s ease;
+}
+.filling-item:hover .filling-bullet::before {
+    background: white;
+    transform: scale(1.3);
+}
+.filling-item-content { flex: 1; }
+.filling-item-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+.filling-item-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+.filling-item-tag {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: rgba(139,26,26,0.08);
+    color: #8B1A1A;
+}
+.filling-item-new { background: #8B1A1A; color: white; }
+.filling-item-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+    font-weight: 300;
+}
+.filling-item-special {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #8B1A1A;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* ===== ABOUT ===== */
+#about { background: white; }
+.about-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-image { position: relative; }
+.about-image-wrapper {
+    border-radius: 16px; overflow: hidden; position: relative;
+    aspect-ratio: 4/5; box-shadow: 0 10px 40px rgba(139,26,26,0.15);
+}
+.about-image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.about-decor {
+    position: absolute; width: 100%; height: 100%;
+    top: 20px; left: 20px;
+    border: 2px solid #8B1A1A; border-radius: 16px; z-index: -1;
+}
+.about-content h2 { font-family: 'Playfair Display', serif; font-size: 40px; margin-bottom: 8px; }
+.about-content h2 span { font-family: 'Great Vibes', cursive; color: #8B1A1A; font-weight: 400; }
+.about-role { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #8B1A1A; margin-bottom: 24px; font-weight: 600; }
+.about-content p { font-size: 15px; color: #777; line-height: 1.8; margin-bottom: 20px; font-weight: 300; }
+.about-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    margin-top: 36px; padding-top: 36px;
+    border-top: 1px solid rgba(139,26,26,0.1);
+}
+.stat-item { text-align: center; }
+.stat-number { font-family: 'Playfair Display', serif; font-size: 36px; color: #8B1A1A; font-weight: 700; }
+.stat-label { font-size: 12px; color: #888; margin-top: 4px; letter-spacing: 0.5px; }
+
+/* ===== COFFEE SHOP ===== */
+#coffee { background: #FAF7F2; }
+.coffee-container { max-width: 1200px; margin: 0 auto; }
+.coffee-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.coffee-grid.reverse { direction: rtl; }
+.coffee-grid.reverse > * { direction: ltr; }
+.coffee-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    line-height: 1.1;
+}
+.coffee-content h3 span {
+    font-family: 'Great Vibes', cursive;
+    color: #8B1A1A;
+    font-weight: 400;
+    font-size: 1.1em;
+}
+.coffee-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+.coffee-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 28px 0;
+}
+.coffee-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: white;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a1a;
+    border: 1px solid rgba(139,26,26,0.1);
+}
+.coffee-feature-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #8B1A1A;
+}
+.coffee-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #8B1A1A;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    border-bottom: 1.5px solid #8B1A1A;
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+}
+.coffee-link:hover { gap: 16px; color: #6B0F0F; border-color: #6B0F0F; }
+.coffee-link svg { width: 16px; height: 16px; transition: transform 0.3s ease; }
+.coffee-link:hover svg { transform: translateX(4px); }
+.coffee-image {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    box-shadow: 0 20px 60px rgba(139,26,26,0.12);
+}
+.coffee-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.coffee-image:hover img { transform: scale(1.04); }
+.coffee-info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+}
+.coffee-info-card {
+    background: white;
+    padding: 28px 24px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid rgba(139,26,26,0.08);
+    transition: all 0.3s ease;
+}
+.coffee-info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(139,26,26,0.1);
+}
+.coffee-info-card .icon-img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(139,26,26,0.15);
+    box-shadow: 0 4px 15px rgba(139,26,26,0.1);
+}
+.coffee-info-card .icon-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.coffee-info-card:hover .icon-img img { transform: scale(1.1); }
+.coffee-info-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+.coffee-info-card p {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/* ===== MASTERCLASSES (FULL PHOTOS + RED DIVIDERS) ===== */
+#masterclasses { background: white; }
+.mc-container { max-width: 1200px; margin: 0 auto; }
+.mc-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(139,26,26,0.2);
+}
+.mc-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.mc-item.reverse { direction: rtl; }
+.mc-item.reverse > * { direction: ltr; }
+.mc-image-block {
+    border-radius: 16px; overflow: hidden; position: relative;
+    box-shadow: 0 10px 40px rgba(139,26,26,0.1);
+    background: #FAF7F2;
+}
+.mc-image-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+.mc-image-block:hover img { transform: scale(1.03); }
+.mc-type-badge {
+    position: absolute; top: 20px; right: 20px;
+    padding: 8px 20px; border-radius: 30px;
+    font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; z-index: 2;
+}
+.mc-type-badge.adult { background: #8B1A1A; color: white; }
+.mc-type-badge.kids { background: #E8A87C; color: white; }
+.mc-content h3 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 16px; color: #1a1a1a; }
+.mc-content > p { font-size: 15px; color: #777; line-height: 1.8; margin-bottom: 28px; font-weight: 300; }
+.mc-meta { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(139,26,26,0.1); }
+.mc-meta-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #1a1a1a; }
+.mc-meta-item svg { width: 20px; height: 20px; color: #8B1A1A; flex-shrink: 0; }
+.mc-meta-item strong { color: #8B1A1A; font-weight: 600; }
+.mc-program { background: #FAF7F2; border-radius: 10px; padding: 24px; border-left: 3px solid #8B1A1A; }
+.mc-program h4 { font-family: 'Playfair Display', serif; font-size: 16px; margin-bottom: 16px; color: #8B1A1A; }
+.mc-program ol { list-style: none; counter-reset: program; }
+.mc-program li {
+    counter-increment: program; padding: 10px 0 10px 40px; position: relative;
+    font-size: 14px; color: #1a1a1a; line-height: 1.6;
+    border-bottom: 1px solid rgba(139,26,26,0.06);
+}
+.mc-program li:last-child { border-bottom: none; }
+.mc-program li::before {
+    content: counter(program); position: absolute; left: 0; top: 10px;
+    width: 26px; height: 26px; background: #8B1A1A; color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 600;
+}
+.mc-price-tag {
+    display: inline-flex; align-items: baseline; gap: 8px;
+    margin-top: 24px; padding: 12px 28px;
+    background: rgba(139,26,26,0.06); border-radius: 30px;
+}
+.mc-price-tag .price { font-family: 'Playfair Display', serif; font-size: 28px; color: #8B1A1A; font-weight: 700; }
+.mc-price-tag .per { font-size: 13px; color: #888; }
+
+/* ===== HOW WE WORK (PHOTO LEFT + VERTICAL STEPS) ===== */
+#howwework { background: #FAF7F2; }
+.hww-container { max-width: 1200px; margin: 0 auto; }
+.hww-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 70px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.hww-photo {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 4 / 5;
+    box-shadow: 0 20px 60px rgba(139,26,26,0.12);
+}
+.hww-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.5s ease;
+}
+.hww-photo:hover img { transform: scale(1.03); }
+.hww-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    position: relative;
+}
+.hww-steps::before {
+    content: '';
+    position: absolute;
+    left: 35px;
+    top: 50px;
+    bottom: 50px;
+    width: 1px;
+    background: rgba(139,26,26,0.2);
+    z-index: 0;
+}
+.hww-step {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    column-gap: 24px;
+    row-gap: 10px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+.hww-step-number {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 70px; height: 70px; border-radius: 50%;
+    background: white; border: 2px solid #8B1A1A;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 26px; color: #8B1A1A; font-weight: 700;
+    transition: all 0.35s ease;
+    align-self: start;
+}
+.hww-step:hover .hww-step-number { background: #8B1A1A; color: white; transform: scale(1.05); }
+.hww-step h4 {
+    grid-column: 2;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #1a1a1a;
+    align-self: center;
+}
+.hww-step p {
+    grid-column: 2;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.7;
+    font-weight: 300;
+}
+@media (max-width: 1024px) {
+    .hww-layout { grid-template-columns: 1fr; gap: 40px; }
+    .hww-photo { width: 100%; max-width: 420px; margin: 0 auto; }
+}
+
+/* ===== ORDER ===== */
+#order { background: white; }
+.order-container { max-width: 900px; margin: 0 auto; }
+.order-form { background: #FAF7F2; border-radius: 16px; padding: 48px; border: 1px solid rgba(139,26,26,0.08); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #888; margin-bottom: 10px; font-weight: 600; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 14px 20px;
+    border: 1.5px solid rgba(139,26,26,0.12); border-radius: 10px;
+    font-size: 14px; font-family: 'Raleway', sans-serif;
+    color: #1a1a1a; background: white;
+    transition: all 0.3s ease; outline: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #8B1A1A; box-shadow: 0 0 0 3px rgba(139,26,26,0.06);
+}
+.form-group textarea { min-height: 120px; resize: vertical; }
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238B1A1A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center;
+    padding-right: 40px;
+}
+.form-section-title {
+    font-family: 'Playfair Display', serif; font-size: 20px;
+    margin-bottom: 24px; padding-bottom: 12px;
+    border-bottom: 1px solid rgba(139,26,26,0.1); color: #1a1a1a;
+}
+.form-section-title span { color: #8B1A1A; }
+.radio-group { display: flex; gap: 12px; flex-wrap: wrap; }
+.radio-option { position: relative; }
+.radio-option input { position: absolute; opacity: 0; }
+.radio-option label {
+    display: block; padding: 14px 28px;
+    border: 1.5px solid rgba(139,26,26,0.12); border-radius: 30px;
+    cursor: pointer; transition: all 0.3s ease;
+    font-size: 14px; font-weight: 500; background: white;
+}
+.radio-option input:checked + label { background: #8B1A1A; color: white; border-color: #8B1A1A; }
+.radio-option label:hover { border-color: #8B1A1A; }
+.delivery-toggle {
+    display: flex; gap: 12px; background: white; padding: 6px;
+    border-radius: 30px; border: 1.5px solid rgba(139,26,26,0.12);
+}
+.delivery-toggle input { display: none; }
+.delivery-toggle label {
+    flex: 1; text-align: center; padding: 12px 24px;
+    border-radius: 24px; cursor: pointer;
+    transition: all 0.3s ease; font-size: 14px; font-weight: 500; color: #888;
+}
+.delivery-toggle input:checked + label { background: #8B1A1A; color: white; }
+.form-submit { text-align: center; margin-top: 36px; }
+.form-submit .btn { padding: 18px 48px; font-size: 13px; }
+
+/* ===== FOOTER ===== */
+footer { background: #1a1a1a; color: rgba(255,255,255,0.7); padding: 60px 40px 30px; }
+.footer-inner { max-width: 1400px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr 1.2fr; gap: 32px; margin-bottom: 48px; }
+.footer-brand .logo-name { color: white; font-size: 32px; }
+.footer-brand .logo-sub { color: rgba(255,255,255,0.4); }
+.footer-brand p { margin-top: 16px; font-size: 14px; line-height: 1.7; font-weight: 300; }
+.footer-col h4 { color: white; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; }
+.footer-col a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; margin-bottom: 12px; transition: all 0.3s ease; font-weight: 300; }
+.footer-col a:hover { color: white; padding-left: 4px; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 300; }
+.footer-socials { display: flex; gap: 12px; }
+.footer-socials a {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.6); text-decoration: none;
+    transition: all 0.3s ease; font-size: 16px;
+}
+.footer-socials a:hover { background: #8B1A1A; border-color: #8B1A1A; color: white; }
+
+/* ===== ANIMATIONS ===== */
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; grid-template-rows: auto 1fr; padding: 100px 40px 60px; gap: 40px; }
+    .hero-content { padding-right: 0; }
+    .hero-visual { height: 70vh; min-height: 500px; }
+    .hero-photo-main { width: 85%; height: 75%; }
+    .hero-photo-secondary { width: 50%; height: 50%; bottom: 20px; }
+    .about-container { grid-template-columns: 1fr; gap: 40px; }
+    .coffee-grid { grid-template-columns: 1fr; gap: 40px; }
+    .coffee-grid.reverse { direction: ltr; }
+    .coffee-info-cards { grid-template-columns: 1fr; }
+    .mc-item { grid-template-columns: 1fr; gap: 30px; }
+    .mc-item.reverse { direction: ltr; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .filling-content { grid-template-columns: 1fr; gap: 40px; }
+    .filling-photo-block { position: relative; top: 0; max-width: 400px; margin: 0 auto; }
+}
+@media (max-width: 768px) {
+    section { padding: 70px 20px; }
+    .header-inner { padding: 12px 20px; }
+    nav {
+        position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+        background: #FAF7F2; flex-direction: column;
+        padding: 80px 30px 30px; transition: all 0.3s ease;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1); gap: 4px;
+    }
+    nav.open { right: 0; }
+    nav a { width: 100%; text-align: center; }
+    .burger { display: flex; }
+    .form-row { grid-template-columns: 1fr; }
+    .order-form { padding: 28px; }
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    .hero-title { font-size: 48px; }
+    .hero-year { font-size: 100px; }
+    .desserts-grid { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .mc-meta { flex-direction: column; gap: 12px; }
+    .dessert-tabs, .filling-tabs { gap: 6px; }
+    .dessert-tab, .filling-tab { padding: 10px 18px; font-size: 12px; }
+    .filling-item { padding: 20px 0; gap: 14px; }
+    .filling-item-name { font-size: 18px; }
+    .filling-bullet { width: 26px; height: 26px; }
+}
+
+.scroll-top {
+    position: fixed; bottom: 30px; right: 30px;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: #8B1A1A; color: white; border: none;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    opacity: 0; visibility: hidden; transition: all 0.3s ease;
+    z-index: 999; box-shadow: 0 4px 15px rgba(139,26,26,0.3);
+}
+.scroll-top.visible { opacity: 1; visibility: visible; }
+.scroll-top:hover { transform: translateY(-3px); background: #6B0F0F; }
+</style>
+</head>
+<body>
+
+<header id="header">
+    <div class="header-inner">
+        <a href="#" class="logo">
+            <div class="logo-circle"><span class="logo-text-icon">Т</span></div>
+            <div class="logo-info">
+                <span class="logo-name">Торт</span>
+                <span class="logo-sub">Студия Галины Беляковой · ESTD 2018</span>
+            </div>
+        </a>
+        <nav id="nav">
+            <a href="#desserts">Десерты</a>
+            <a href="#fillings">Начинки</a>
+            <a href="#about">О нас</a>
+            <a href="#coffee">Торт&Coffee</a>
+            <a href="#masterclasses">Мастер-классы</a>
+            <a href="#order" class="nav-order-btn">Заказать</a>
+        </nav>
+        <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1 class="hero-title">
+            Торты,
+            <span class="accent">созданные с любовью</span>
+        </h1>
+        <p class="hero-desc">
+            Каждый десерт — это история, рассказанная через вкус и красоту. 
+            Натуральные ингредиенты, авторские рецепты, безупречное исполнение.
+        </p>
+        <div class="hero-btns">
+            <a href="#order" class="btn btn-primary">Заказать торт</a>
+            <a href="#desserts" class="btn btn-outline">Каталог</a>
+        </div>
+    </div>
+    <div class="hero-visual">
+        <div class="hero-decor-circle"></div>
+        <div class="hero-decor-line"></div>
+        <div class="hero-year">2018</div>
+        <div class="hero-photo-main">
+            <img src="cake2.jpg" alt="Свадебный торт">
+        </div>
+        <div class="hero-photo-secondary">
+            <img src="cake1.jpg" alt="Торт со клубникой">
+        </div>
+    </div>
+</section>
+
+<section id="desserts">
+    <div class="desserts-container">
+        <div class="section-header fade-up">
+            <span class="section-label">Каталог</span>
+            <h2 class="section-title">Наши десерты</h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">Каждый десерт — это маленькое произведение искусства, созданное с любовью и вниманием к деталям</p>
+        </div>
+        <div class="dessert-tabs fade-up" id="dessertTabs">
+            <button class="dessert-tab active" data-tab="cakes">Торты</button>
+            <button class="dessert-tab" data-tab="pastries">Пирожные</button>
+        </div>
+        <div class="subtabs-row" id="subtabsRow"></div>
+        <div class="desserts-grid" id="dessertsGrid"></div>
+    </div>
+</section>
+
+<section id="fillings">
+    <div class="fillings-container">
+        <div class="section-header fade-up">
+            <span class="section-label">Вкусы</span>
+            <h2 class="section-title">Начинки тортов</h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">Авторские сочетания вкусов, которые покорят ваше сердце</p>
+        </div>
+        <div class="filling-tabs fade-up">
+            <button class="filling-tab active" data-tab="mousse">Муссовые торты</button>
+            <button class="filling-tab" data-tab="bento">Бенто-торты</button>
+            <button class="filling-tab" data-tab="new">Новинки</button>
+        </div>
+        <div class="filling-content fade-up" id="fillingContent"></div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="about-container">
+        <div class="about-image fade-up">
+            <div class="about-image-wrapper">
+                <img src="galina.jpg" alt="Галина Белякова">
+            </div>
+            <div class="about-decor"></div>
+        </div>
+        <div class="about-content fade-up">
+            <span class="section-label">О кондитере</span>
+            <h2>Галина <span>Белякова</span></h2>
+            <div class="about-role">Шеф-кондитер · Основатель студии</div>
+            <p>С 2018 года я создаю десерты, которые становятся частью самых важных моментов в жизни моих клиентов. Каждый торт — это история, рассказанная через вкус и красоту.</p>
+            <p>Моя философия — использовать только натуральные ингредиенты премиального качества: бельгийский шоколад, французское масло, сезонные ягоды и фрукты. Никаких искусственных добавок и консервантов.</p>
+            <p>Я постоянно совершенствую мастерство, изучаю новейшие кондитерские техники и создаю авторские рецепты, которые невозможно найти больше нигде.</p>
+            <div class="about-stats">
+                <div class="stat-item"><div class="stat-number">8+</div><div class="stat-label">лет опыта</div></div>
+                <div class="stat-item"><div class="stat-number">2000+</div><div class="stat-label">тортов создано</div></div>
+                <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">авторских рецептов</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="coffee">
+    <div class="coffee-container">
+        <div class="section-header fade-up">
+            <span class="section-label">Новое место</span>
+            <h2 class="section-title">Торт&Coffee</h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">Уютная кофейня в другой части города, где вас ждут авторский кофе, десерты Галины и вкусные завтраки</p>
+        </div>
+
+        <div class="coffee-grid fade-up">
+            <div class="coffee-image">
+                <img src="coffee1.jpg" alt="Интерьер кофейни Торт&Coffee">
+            </div>
+            <div class="coffee-content">
+                <h3>Место, где <span>рождается утро</span></h3>
+                <p>Торт&Coffee — это вторая студия Галины Беляковой, расположенная в Центральном округе Комсомольска-на-Амуре. Светлый интерьер с живыми растениями, неоновыми акцентами и мягкими креслами создаёт атмосферу, в которую хочется возвращаться.</p>
+                <p>Мы варим кофе на зерне <strong>Tasty Coffee</strong> — одного из лучших обжарщиков России. Сегодня в бункере — Коста-Рика Сан Хосе: лёгкий кофе с нотами сухофруктов, цедры цитрусовых и молочного шоколада.</p>
+                <div class="coffee-features">
+                    <div class="coffee-feature"><span class="coffee-feature-dot"></span>Tasty Coffee</div>
+                    <div class="coffee-feature"><span class="coffee-feature-dot"></span>Завтраки весь день</div>
+                    <div class="coffee-feature"><span class="coffee-feature-dot"></span>Десерты Галины</div>
+                </div>
+                <a href="#" class="coffee-link">
+                    Посмотреть меню кофейни
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="coffee-grid reverse fade-up">
+            <div class="coffee-image">
+                <img src="coffee2.jpg" alt="Уютная зона кофейни">
+            </div>
+            <div class="coffee-content">
+                <h3>Кофе, который <span>вдохновляет</span></h3>
+                <p>Наши бариста работают со свежей обжаркой от Tasty Coffee. В меню — классический эспрессо, капучино, латте, а также авторские напитки: Passion Latte с маракуйей, Бамбл кофе с апельсиновым соком и сезонные предложения.</p>
+                <p>Завтраки подаём с 9:00 до 16:00: сырники, тосты с авокадо, овсянка с ягодами, круассаны с начинками. Всё готовится из свежих продуктов каждое утро.</p>
+                <a href="#" class="coffee-link">
+                    Узнать адрес и часы работы
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="coffee-info-cards fade-up">
+            <div class="coffee-info-card">
+                <div class="icon-img">
+                    <img src="coffee-latte.jpg" alt="Кофе Tasty Coffee">
+                </div>
+                <h4>Кофе Tasty Coffee</h4>
+                <p>Свежая обжарка от лучшего российского бренда. Эспрессо, фильтр, авторские напитки.</p>
+            </div>
+            <div class="coffee-info-card">
+                <div class="icon-img">
+                    <img src="breakfast-plate.jpg" alt="Завтраки">
+                </div>
+                <h4>Завтраки</h4>
+                <p>Сырники, тосты, овсянка, круассаны. Подаём с 9:00 до 16:00 каждый день.</p>
+            </div>
+            <div class="coffee-info-card">
+                <div class="icon-img">
+                    <img src="coffee-pastry.jpg" alt="Десерты">
+                </div>
+                <h4>Десерты</h4>
+                <p>Полный ассортимент студии «Торт»: торты, макаронс, пирожные, круассаны.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="masterclasses">
+    <div class="mc-container">
+        <div class="section-header fade-up">
+            <span class="section-label">Обучение</span>
+            <h2 class="section-title">Мастер-классы</h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">Научитесь создавать кондитерские шедевры своими руками под руководством профессионала</p>
+        </div>
+
+        <div class="mc-item fade-up">
+            <div class="mc-image-block">
+                <img src="mc-mini-hearts.jpg" alt="Мини-торты классика">
+                <span class="mc-type-badge adult">Для взрослых</span>
+            </div>
+            <div class="mc-content">
+                <h3>Мини-торты классика</h3>
+                <p>Научитесь собирать и оформлять три популярных торта в формате бенто. Каждый участник заберёт домой три готовых торта. Идеально для начинающих кондитеров.</p>
+                <div class="mc-meta">
+                    <div class="mc-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        <span><strong>10:00 – 15:00</strong></span>
+                    </div>
+                    <div class="mc-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <span>до <strong>11 человек</strong></span>
+                    </div>
+                    <div class="mc-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Студия «Торт»</span>
+                    </div>
+                </div>
+                <div class="mc-program">
+                    <h4>Что готовим</h4>
+                    <ol>
+                        <li>Шоколадный торт с фундуком в глазури «Ферреро Роше»</li>
+                        <li>Медовик шоколадный «Молочный ломтик»</li>
+                        <li>Красный бархат с ягодной начинкой</li>
+                    </ol>
+                    <h4 style="margin-top: 20px;">Программа</h4>
+                    <ol>
+                        <li>Сборка тортов и нюансы приготовления</li>
+                        <li>Оформление и лёгкий декор</li>
+                        <li>Техника рисунков на торте</li>
+                        <li>Каждый собирает и оформляет три торта</li>
+                        <li>Все готовые торты забираете с собой</li>
+                    </ol>
+                </div>
+                <div class="mc-price-tag"><span class="price">5 500 ₽</span><span class="per">/ с человека</span></div>
+            </div>
+        </div>
+
+        <div class="mc-item reverse fade-up">
+            <div class="mc-image-block">
+                <img src="mc-cake-bomb.jpg" alt="Торт-бомба и авторские десерты">
+                <span class="mc-type-badge adult">Для взрослых</span>
+            </div>
+            <div class="mc-content">
+                <h3>Торт-бомба и авторские десерты</h3>
+                <p>Полноценный мастер-класс для тех, кто хочет освоить сложные техники: велюровое покрытие, сборку многослойных тортов, приготовление макаронс и эклеров. Шесть позиций за один день!</p>
+                <div class="mc-meta">
+                    <div class="mc-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        <span><strong>9:00 – 17:30</strong></span>
+                    </div>
+                    <div class="mc-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <span>до <strong>11 человек</strong></span>
+                    </div>
+                    <div class="mc-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Студия «Торт»</span>
+                    </div>
+                </div>
+                <div class="mc-program">
+                    <h4>Что готовим</h4>
+                    <ol>
+                        <li>Торт-бомба: шоколадный брауни с хрустящим слоем из вафли и фундука, карамель, шоколадный крем. Покрытие велюром</li>
+                        <li>Ванильный торт с клубникой-маракуйей: ванильный бисквит, крем с манго, клубничный конфи, конфи с маракуйей, крем чиз</li>
+                        <li>Медовик «Молочный ломтик» с карамелью в виде пирожных</li>
+                        <li>Макаронс «Лимонный пирог»</li>
+                        <li>Эклер Шу «Крем брюле» с малиновым центром</li>
+                        <li>Шоколадные бомбочки для горячих напитков</li>
+                    </ol>
+                    <h4 style="margin-top: 20px;">Программа</h4>
+                    <ol>
+                        <li>Сборка тортов и нюансы изготовления</li>
+                        <li>Техника покрытия велюром</li>
+                        <li>Приготовление макаронс и эклеров</li>
+                        <li>Все готовые десерты забираете с собой</li>
+                    </ol>
+                </div>
+                <div class="mc-price-tag"><span class="price">8 000 ₽</span><span class="per">/ с человека</span></div>
+            </div>
+        </div>
+
+        <div class="mc-item fade-up">
+            <div class="mc-image-block">
+                <img src="mc-kids-school.jpg" alt="Детский мастер-класс">
+                <span class="mc-type-badge kids">Для детей</span>
+            </div>
+            <div class="mc-content">
+                <h3>Юный кондитер</h3>
+                <p>Весёлый и познавательный мастер-класс для детей от 7 лет! Ребята научатся украшать капкейки, готовить шоколадные трюфели и расписывать имбирные пряники.</p>
+                <div class="mc-meta">
+                    <div class="mc-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        <span><strong>11:00 – 13:00</strong></span>
+                    </div>
+                    <div class="mc-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <span>до <strong>6 детей</strong></span>
+                    </div>
+                    <div class="mc-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>от <strong>7 лет</strong></span>
+                    </div>
+                </div>
+                <div class="mc-program">
+                    <h4>Программа мастер-класса</h4>
+                    <ol>
+                        <li>Знакомство с кондитерским миром</li>
+                        <li>Приготовление теста для капкейков</li>
+                        <li>Взбивание цветного крема</li>
+                        <li>Украшение капкейков посыпкой и фигурками</li>
+                        <li>Роспись имбирных пряников</li>
+                        <li>Приготовление шоколадных трюфелей</li>
+                        <li>Фотосессия с готовыми работами</li>
+                    </ol>
+                </div>
+                <div class="mc-price-tag"><span class="price">2 500 ₽</span><span class="per">/ с ребёнка</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="howwework">
+    <div class="hww-container">
+        <div class="section-header fade-up">
+            <span class="section-label">Процесс</span>
+            <h2 class="section-title">Как мы работаем</h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">Простой и понятный процесс от заявки до получения вашего идеального торта</p>
+        </div>
+        <div class="hww-layout fade-up">
+            <div class="hww-photo">
+                <img src="studio-facade.jpg" alt="Кондитерская студия «Торт»">
+            </div>
+            <div class="hww-steps">
+                <div class="hww-step">
+                    <div class="hww-step-number">1</div>
+                    <h4>Принятие заказа</h4>
+                    <p>Оформите заказ за 3-4 дня до события. Обсудим начинку, декор, размер и все детали вашего торта. Минимальный срок — 72 часа.</p>
+                </div>
+                <div class="hww-step">
+                    <div class="hww-step-number">2</div>
+                    <h4>Оплата заказа</h4>
+                    <p>Предоплата 50% при оформлении заказа. Оставшаяся сумма оплачивается при получении торта. Принимаем карты и наличные.</p>
+                </div>
+                <div class="hww-step">
+                    <div class="hww-step-number">3</div>
+                    <h4>Доставка или самовывоз</h4>
+                    <p>Доставим торт в удобное время по Комсомольску-на-Амуре или подготовим к самовывозу из нашей студии на ул. Калинина, 9.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="order">
+    <div class="order-container">
+        <div class="section-header fade-up">
+            <span class="section-label">Оформление</span>
+            <h2 class="section-title">Заказать десерт</h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">Выберите удобный способ оформления заказа</p>
+        </div>
+        
+        <form class="order-form fade-up" id="orderForm">
+            
+            <div class="form-section-title">
+                <span>01.</span> Быстрый заказ
+            </div>
+            <p style="font-size: 14px; color: #777; margin-bottom: 24px; font-weight: 300; line-height: 1.6;">
+                Оставьте контакты и дату — мы свяжемся с вами для уточнения деталей. Идеально, если вы уже знаете, что хотите.
+            </p>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Ваше имя</label>
+                    <input type="text" placeholder="Как к вам обращаться?" required>
+                </div>
+                <div class="form-group">
+                    <label>Телефон</label>
+                    <input type="tel" placeholder="+7 (___) ___-__-__" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Дата заказа</label>
+                    <input type="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Повод</label>
+                    <select>
+                        <option value="">Выберите повод...</option>
+                        <option>День рождения</option>
+                        <option>Свадьба</option>
+                        <option>Годовщина</option>
+                        <option>Детский праздник</option>
+                        <option>Корпоратив</option>
+                        <option>Без повода</option>
+                        <option>Другое</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section-title" style="margin-top: 40px;">
+                <span>02.</span> Детали заказа
+            </div>
+            <p style="font-size: 14px; color: #777; margin-bottom: 24px; font-weight: 300; line-height: 1.6;">
+                Уточните параметры десерта. Если вы уже определились — заполните поля ниже, если нет — мы поможем выбрать.
+            </p>
+
+            <div class="form-group">
+                <label>Тип десерта</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" name="type" id="type-tort" value="tort" checked>
+                        <label for="type-tort">Торт</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="type" id="type-bento" value="bento">
+                        <label for="type-bento">Бенто-торт</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="type" id="type-pastry" value="pastry">
+                        <label for="type-pastry">Пирожные</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Вкус начинки</label>
+                    <select id="filling">
+                        <option value="">Выберите начинку...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Вес / количество</label>
+                    <select id="weight">
+                        <option value="">Выберите...</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Способ получения</label>
+                <div class="delivery-toggle">
+                    <input type="radio" name="delivery" id="delivery-pickup" value="pickup" checked>
+                    <label for="delivery-pickup">Самовывоз</label>
+                    <input type="radio" name="delivery" id="delivery-delivery" value="delivery">
+                    <label for="delivery-delivery">Доставка</label>
+                </div>
+            </div>
+            <div class="form-row" id="deliveryDetails" style="display: none;">
+                <div class="form-group">
+                    <label>Адрес доставки</label>
+                    <input type="text" placeholder="Улица, дом, квартира">
+                </div>
+                <div class="form-group">
+                    <label>Время доставки</label>
+                    <input type="time">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Описание декора и пожелания</label>
+                <textarea placeholder="Опишите желаемый дизайн, цветовую гамму, надпись на торте, особые пожелания..."></textarea>
+            </div>
+
+            <div class="form-submit">
+                <button type="submit" class="btn btn-primary">Отправить заявку</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo-name" style="font-family: 'Great Vibes', cursive;">Торт</div>
+                <div class="logo-sub">Студия Галины Беляковой · ESTD 2018</div>
+                <p>Авторские десерты ручной работы для ваших самых важных моментов. Торты на свадьбы, дни рождения и праздники.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <a href="#desserts">Десерты</a>
+                <a href="#fillings">Начинки</a>
+                <a href="#about">О нас</a>
+                <a href="#coffee">Торт&Coffee</a>
+                <a href="#masterclasses">Мастер-классы</a>
+                <a href="#order">Заказать</a>
+            </div>
+            <div class="footer-col">
+                <h4>Десерты</h4>
+                <a href="#">Муссовые торты</a>
+                <a href="#">Бенто-торты</a>
+                <a href="#">Макаронс</a>
+                <a href="#">Круассаны</a>
+                <a href="#">Пирожные</a>
+            </div>
+            <div class="footer-col">
+                <h4>Студия «Торт»</h4>
+                <a href="https://yandex.ru/maps/?text=Комсомольск-на-Амуре,+улица+Калинина,+9" target="_blank">ул. Калинина, 9</a>
+                <a href="https://yandex.ru/maps/?text=Комсомольск-на-Амуре,+улица+Калинина,+9" target="_blank" style="font-size: 12px; line-height: 1.5;">Ленинский округ, Комсомольск-на-Амуре, Хабаровский край, 681022</a>
+                <a href="tel:+79242229787">+7 (924) 222-97-87</a>
+                <a href="tel:+79249177576">+7 (924) 917-75-76</a>
+                <a href="#">Пн — Сб: 09:00 – 18:00</a>
+                <a href="#">Воскресенье: 09:00 – 15:00</a>
+            </div>
+            <div class="footer-col">
+                <h4>Торт&Coffee</h4>
+                <a href="https://yandex.ru/maps/?text=Комсомольск-на-Амуре,+Красногвардейская+улица,+36" target="_blank">Красногвардейская ул., 36</a>
+                <a href="https://yandex.ru/maps/?text=Комсомольск-на-Амуре,+Красногвардейская+улица,+36" target="_blank" style="font-size: 12px; line-height: 1.5;">Центральный округ, Комсомольск-на-Амуре, Хабаровский край, 681013</a>
+                <a href="tel:+79244177576">+7 (924) 417-75-76</a>
+                <a href="#">Ежедневно: 09:00 – 19:30</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2018–2026 Студия «Торт» Галины Беляковой. Все права защищены.</span>
+            <div class="footer-socials">
+                <a href="#" title="Instagram"></a>
+                <a href="#" title="Telegram"></a>
+                <a href="#" title="WhatsApp"></a>
+                <a href="#" title="VK"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button>
+
+<script>
+// ===== DESSERTS DATA (2 MAIN CATEGORIES) =====
+const dessertsData = {
+    cakes: {
+        subtabs: ['Бенто-торты', 'Муссовые', 'Детские', 'Свадебные', 'Универсальные'],
+        items: {
+            'Бенто-торты': [
+                { name: 'Розовый с котиком', desc: 'Розовый бенто-торт с иллюстрацией котика и юмористической надписью «Как будто я специально лучше всех!».', price: '1 500 ₽/шт', img: 'bento-cat-funny.jpg', badge: 'Хит' },
+                { name: 'Лучшая мама в мире', desc: 'Нежные бенто-торты с надписями «Лучшая мама в мире» и «Весь мир начинается с мамы».', price: '1 500 ₽/шт', img: 'cake-for-mom.jpg', badge: '' },
+                { name: 'Люблю', desc: 'Белые бенто-сердца с кремовым бордюром и надписью «Люблю» / «Я тебя люблю» с купидоном.', price: '1 500 ₽/шт', img: 'mc-mini-hearts.jpg', badge: '14 февраля' },
+                { name: 'Львёнок «Егорке годик»', desc: 'Бенто-торт с милым львёнком, зелёными и золотыми шарами, листьями монстеры и цифрой 1.', price: '1 500 ₽/шт', img: 'cake-lion-first-birthday.jpg', badge: '' },
+                { name: 'Зайчик «Есении 1 годик»', desc: 'Бенто-торт с фигуркой зайчика, бабочками, цветами и жемчугом.', price: '1 500 ₽/шт', img: 'cake-bunny-yesenia.jpg', badge: '' }
+            ],
+            'Муссовые': [
+                { name: 'Чёрное сердце', desc: 'Чёрный велюровый муссовый торт в форме сердца с золотой надписью Happy Birthday и свежими ягодами.', price: 'от 3 200 ₽/кг', img: 'cake-heart-black.jpg', badge: 'Хит' },
+                { name: 'Торт-бомба', desc: 'Фиолетовый муссовый торт-бомба с велюром, блестками и надписью «Не сын, а бомба». В комплекте молоточек!', price: 'от 3 200 ₽/кг', img: 'mc-cake-bomb.jpg', badge: 'New' },
+                { name: 'Мотивационный', desc: 'Строгий чёрный муссовый торт с золотыми звёздами, шоколадными сферами и мотивационной надписью.', price: 'от 3 200 ₽/кг', img: 'cake-motivation-black.jpg', badge: '' },
+                { name: 'Коллекция 8 Марта', desc: 'Муссовые десерты в форме цветка, розы и сердца с золотой надписью «8 Марта».', price: 'от 3 500 ₽/кг', img: 'cake-march8-collection.jpg', badge: '8 марта' },
+                { name: 'Minecraft «Арсений»', desc: 'Кубический муссовый торт в стиле Minecraft с персонажами, TNT, мечом и макаронс.', price: 'от 3 200 ₽/кг', img: 'cake-minecraft.jpg', badge: 'Хит' }
+            ],
+            'Детские': [
+                { name: 'Зайчик «1 месяц»', desc: 'Нежный белый торт с милым зайчиком для празднования первого месяца малыша.', price: 'от 3 200 ₽/кг', img: 'cake-bunny-1month.jpg', badge: '' },
+                { name: 'Roblox', desc: 'Яркий голубой торт с персонажем Roblox, леденцами, фигурками Lego и цифрой 8.', price: 'от 3 200 ₽/кг', img: 'cake-roblox.jpg', badge: 'Хит' },
+                { name: 'Космонавт', desc: 'Тёмно-синий торт с фигуркой космонавта, луной, ракетой и звёздами. Космическая тематика.', price: 'от 3 200 ₽/кг', img: 'cake-astronaut.jpg', badge: '' },
+                { name: 'Миньоны «Макару 5»', desc: 'Яркий жёлто-синий торт с Миньонами, леденцами, пончиком и цифрой 5.', price: 'от 3 200 ₽/кг', img: 'cake-minions.jpg', badge: '' },
+                { name: 'Мишка «Мишке годик»', desc: 'Голубой торт с мишкой в короне, воздушными шарами, облаками и золотыми звёздами.', price: 'от 3 200 ₽/кг', img: 'cake-bear-first-birthday.jpg', badge: '' },
+                { name: 'Динозавры', desc: 'Зелёно-белый торт с динозаврами, листьями монстеры, шоколадным яйцом и цифрой 6.', price: 'от 3 200 ₽/кг', img: 'cake-dinosaurs.jpg', badge: '' },
+                { name: 'Для нашей Малышки', desc: 'Двухъярусный белый торт с розовыми лентами из изомальта, пионами и золотыми сердечками.', price: 'от 3 500 ₽/кг', img: 'cake-baby-shower-pink.jpg', badge: '' },
+                { name: 'Фруктовый «Марьяне 4»', desc: 'Яркий двухъярусный торт с ананасом, арбузом, киви, апельсинами, макаронс и надписью «Марьяне».', price: 'от 3 200 ₽/кг', img: 'cake-fruit-maryana.jpg', badge: '' },
+                { name: 'Двойка «С Днём Знаний»', desc: 'Торт в форме цифры 2 с малиной, макаронс, меренгами и тематическим декором ко Дню знаний.', price: 'от 3 200 ₽/кг', img: 'cake-number2-knowledge-day.jpg', badge: '1 сентября' }
+            ],
+            'Свадебные': [
+                { name: 'Классическая элегантность', desc: 'Двухъярусный белый свадебный торт с текстурной обмазкой и живыми цветами.', price: 'от 3 500 ₽/кг', img: 'cake2.jpg', badge: 'Хит' },
+                { name: 'Прямоугольный с эустомами', desc: 'Прямоугольный торт в нежно-розовых и белых тонах с живыми эустомами и кремовыми волнами.', price: 'от 3 500 ₽/кг', img: 'cake-rectangular-flowers.jpg', badge: '' },
+                { name: 'Монограмма C&O', desc: 'Двухъярусный белый торт с золотой монограммой, белыми листьями, жемчугом и золотыми акцентами.', price: 'от 4 000 ₽/кг', img: 'cake-wedding-monogram.jpg', badge: '' },
+                { name: 'Свадебный с ягодами', desc: 'Двухъярусный торт с текстурной обмазкой, живыми цветами, ягодами и золотой монограммой A&G.', price: 'от 4 000 ₽/кг', img: 'cake-wedding-berries.jpg', badge: '' },
+                { name: 'Монограмма Д&А', desc: 'Элегантный белый торт с золотой монограммой, сухоцветами, жемчугом и сусальным золотом.', price: 'от 4 000 ₽/кг', img: 'cake-wedding-monogram-da.jpg', badge: '' },
+                { name: 'Свадебный с пионами', desc: 'Двухъярусный белый торт с пионами, эустомами, зеленью и сусальным золотом.', price: 'от 4 000 ₽/кг', img: 'cake-wedding-peony.jpg', badge: '' }
+            ],
+            'Универсальные': [
+                { name: 'Клубничный со сливками', desc: 'Классический торт с клубникой и сливочным кремом — универсальный выбор для любого повода.', price: 'от 3 000 ₽/кг', img: 'cake1.jpg', badge: 'Хит' },
+                { name: 'Коралловый с золотом', desc: 'Элегантный коралловый торт с золотым drip-эффектом, красными розами, гвоздиками, клубникой и эвкалиптом.', price: 'от 3 200 ₽/кг', img: 'cake-coral-gold.jpg', badge: '' },
+                { name: 'Лавандовый с ягодами', desc: 'Нежный лавандовый торт с белым шоколадным узором, свежими ягодами и макарон.', price: 'от 3 200 ₽/кг', img: 'cake-lavender-berries.jpg', badge: '' },
+                { name: 'Защитнику', desc: 'Тематический зелёный торт ко Дню защитника Отечества с золотой надписью «Моему защитнику».', price: 'от 3 200 ₽/кг', img: 'cake-feb23-defender.jpg', badge: '23 февраля' },
+                { name: 'Медовик на 23 февраля', desc: 'Классический медовый торт с цифрой 23, мандаринами, черникой, макаронс, шишками и еловыми ветками.', price: 'от 3 200 ₽/кг', img: 'cake-feb23-naked.jpg', badge: '23 февраля' },
+                { name: 'Карта мира', desc: 'Двухъярусный торт с золотой картой мира, живыми цветами и топпером «С Днём Рождения».', price: 'от 3 200 ₽/кг', img: 'cake-world-map.jpg', badge: '' },
+                { name: 'Гарри Поттер', desc: 'Розово-зелёный торт с золотым снитчем, крыльями, палочкой и буквами Hp. Цифра 35.', price: 'от 3 200 ₽/кг', img: 'cake-harry-potter.jpg', badge: '' },
+                { name: 'Медовик с клубникой', desc: 'Классический медовый торт с крошкой, свежей клубникой и розовыми макаронс. Лёгкий и нежный.', price: 'от 3 000 ₽/кг', img: 'cake-naked-strawberry.jpg', badge: '' },
+                { name: 'Новогодняя коллекция', desc: 'Зелёный торт с золотыми бантами и надписью «С Новым Годом!». Бенто-торты с мишкой и зайчиком у ёлочки.', price: 'от 3 200 ₽/кг', img: 'cake-new-year-collection.jpg', badge: 'Новый год' }
+            ]
+        }
+    },
+    pastries: {
+        subtabs: [],
+        items: { 'Все': [
+            { name: 'Фруктовые пирожные', desc: 'Яркие муссовые десерты в форме банана, манго, яблока и персика в полосатых коробочках.', price: '450 ₽/шт', img: 'pastries-fruits.jpg', badge: 'Хит' },
+            { name: 'Ягодные шарики', desc: 'Авторские муссовые пирожные в форме черники и малины с бархатным покрытием.', price: '450 ₽/шт', img: 'pastries-berries.jpg', badge: '' },
+            { name: 'Реалистичные фрукты', desc: 'Муссовые десерты в форме манго, банана, персика и шоколадного трюфеля.', price: '480 ₽/шт', img: 'pastries-fruits-realistic.jpg', badge: 'New' },
+            { name: 'Кубики-башня', desc: 'Кубические муссовые пирожные разных цветов, сложенные в башню на стеклянных полках. Украшены белыми цветами.', price: '520 ₽/шт', img: 'pastries-cubes-tower.jpg', badge: '' },
+            { name: 'Розовый бант', desc: 'Нежное муссовое пирожное в форме банта с розовым велюровым покрытием.', price: '480 ₽/шт', img: 'pastry-pink-bow.jpg', badge: 'New' },
+            { name: 'Сердечки «Маме»', desc: 'Красные муссовые пирожные в форме сердец с узором розы и золотой надписью «Маме».', price: '480 ₽/шт', img: 'pastries-hearts-mom.jpg', badge: '8 марта' },
+            { name: 'Мишки LOVE', desc: 'Четыре шоколадных пирожных с белыми мишками, держащими буквы L, O, V, E.', price: '480 ₽/шт', img: 'pastries-love-bears.jpg', badge: '14 февраля' },
+            { name: 'Эклеры «Te Amo»', desc: 'Романтические эклеры с фигурками влюблённых, красными сердцами и надписью «Te Amo».', price: '450 ₽/шт', img: 'eclairs-romantic.jpg', badge: '14 февраля' },
+            { name: 'Меренговый рулет', desc: 'Воздушный рулет из безе с кремом, карамелизированными орехами и свежей клубникой.', price: '420 ₽/шт', img: 'pastries-meringue-rolls.jpg', badge: '' },
+            { name: 'Макаронс подарочный набор', desc: 'Розовые и жёлтые макаронс в стильной белой коробке с прозрачным окошком.', price: 'от 130 ₽/шт', img: 'macarons-boxes.jpg', badge: 'Хит' },
+            { name: 'Макаронс весенний набор', desc: 'Яркие макаронс в коробке с зелёной лентой. Идеальный подарок на 8 марта.', price: 'от 130 ₽/шт', img: 'macarons-spring.jpg', badge: '8 марта' },
+            { name: 'Ассорти круассанов', desc: 'Три вида круассанов: с сахарной пудрой, с кунжутом и классический. Подаются с кофе.', price: '540 ₽/набор', img: 'croissants-assorted.jpg', badge: 'Новинка' },
+            { name: 'Dubai Chocolate', desc: 'Шоколадные плитки с надписью Dubai Chocolate и яркими брызгами. Модный трендовый десерт.', price: 'от 1 500 ₽', img: 'chocolate-dubai.jpg', badge: 'Тренд' },
+            { name: 'Подарочный набор 23 февраля', desc: 'Золотая коробка с мишкой в военной шапке, шоколадной бочкой мёда, гармошкой, петушком и печеньем «орешки».', price: 'от 2 500 ₽', img: 'giftbox-feb23-bear.jpg', badge: '23 февраля' },
+            { name: 'Набор «1 сентября»', desc: 'Школьный набор: бенто-торт «Учись прилежно!», шоколадные пирожные с ранцем и ABC, макаронс и фруктовые десерты.', price: 'от 2 900 ₽', img: 'mc-kids-school.jpg', badge: '1 сентября' }
+        ]}
+    }
+};
+
+// ===== FILLINGS DATA (3 TABS, PHOTO LEFT) =====
+const fillingsData = {
+    mousse: {
+        photo: 'cake-heart-black.jpg',
+        items: [
+            { name: 'Блюзберри', desc: 'Бисквит джоконда с черникой, конфи и крем черника-ежевика, йогуртовый мусс с кусочками ягод', tag: 'Ягодный' },
+            { name: 'Карамельная груша', desc: 'Шоколадный брауни с грушей и сыром бри, солёная карамель тоффи, грушевый конфитюр с лимоном, сливочно-сырный мусс', tag: 'Классика' },
+            { name: 'Тропический ирис', desc: 'Миндальный дакуаз, конфи с клубникой, конфи с манго/маракуйя, штройзель с лаймом, карамельный мусс', tag: 'Тропический' },
+            { name: 'Малибу', desc: 'Дакуаз с бананом и миндалём, креме маракуйя/персик, карамелизованный банан, мусс с тропическими фруктами', tag: 'Тропический' },
+            { name: 'Малина-ваниль', desc: 'Миндальный бисквит с пюре малины, ванильное креме, малиновое конфи и малиновый мусс с меренгой', tag: 'Ягодный' },
+            { name: 'Карамельный профитроль', desc: 'Бисквит с грецким орехом, хрустящий слой, профитроли с карамелью и взбитым ганашем, мусс на белом шоколаде с фундуком', tag: 'Ореховый' },
+            { name: 'Пьемонт', desc: 'Фундучные меренги, компот с вялеными абрикосами и юзу, солёная карамель тоффи, взбитый ванильный ганаш, мусс на молочном шоколаде с фундучным пралине', tag: 'Ореховый' },
+            { name: 'Фисташковое мороженое', desc: 'Бисквит с малиной и миндалём, хрустящий слой с белым шоколадом и бельгийской вафлей, конфи вишня-малина, ванильный крем, фисташковый мусс', tag: 'Ореховый' },
+            { name: 'Passion', desc: 'Кокосовый дакуаз, шоколадный крем, конфи с маракуйей и всё это в нежном фруктовом муссе с экзотическими фруктами (манго/маракуйя)', tag: 'Тропический' },
+            { name: 'Манго-малина', desc: 'Бисквит с кокосом, хрустящий слой с кокосом, малиновое конфи, мусс с манго', tag: 'Тропический' },
+            { name: 'Банановый брауни', desc: 'Брауни на тёмном шоколаде, с карамелизированными бананами, грецкими орехами, хрустящий слой с бельгийской вафлей, карамель тоффи, шоколадный супрем, мусс на тёмном кувертюре с ямайским перцем', tag: 'Шоколадный', special: 'Для истинных шоколадных гурманов' }
+        ]
+    },
+    bento: {
+        photo: 'cake-for-mom.jpg',
+        items: [
+            { name: 'Фисташковый с ягодной начинкой', desc: 'Фисташковый крем чиз с нежной ягодной прослойкой. Свежий и лёгкий вкус.', tag: 'Популярный' },
+            { name: 'Медовик со сметанным кремом', desc: 'Классический медовик с воздушным сметанным кремом и ягодной начинкой.', tag: 'Классика' },
+            { name: 'Шоколадный с вишней или карамелью', desc: 'Насыщенный шоколадный бисквит с кремом чиз и вишнёвой или карамельной начинкой.', tag: 'Шоколадный' },
+            { name: 'Ванильный с ягодной начинкой', desc: 'Нежный ванильный бисквит с кремом чиз и сезонными ягодами.', tag: 'Классика' },
+            { name: 'Ванильный с тропической начинкой', desc: 'Ванильный бисквит с кремом чиз и тропическим конфи (манго/маракуйя).', tag: 'Тропический' },
+            { name: 'Красный бархат с ягодной начинкой', desc: 'Фирменный красный бархат с кремом чиз и ягодной прослойкой.', tag: 'Популярный' }
+        ]
+    },
+    new: {
+        photo: 'cake-lilac-flowers.jpg',
+        items: [
+            { name: 'Торт «ТЕО»', desc: 'Шоколадный бисквит с кусочками шоколада, ванильное крем, хрустящий слой из вафель, шоколадный мусс.', tag: 'Новинка', isNew: true },
+            { name: 'Пряный апельсин', desc: 'Шоколадный бисквит с миндалём, апельсиновый крем и мусс на тёмном шоколаде со специями.', tag: 'Новинка', isNew: true },
+            { name: 'Торт «Ягодная Магдалена»', desc: 'Бисквит джоконда с малиной, клубничный конфи, клубнично-малиновое крем, мусс с греческим йогуртом.', tag: 'Новинка', isNew: true }
+        ]
+    }
+};
+
+// ===== RENDER FILLINGS =====
+function renderFillings(tab) {
+    const content = document.getElementById('fillingContent');
+    const data = fillingsData[tab] || fillingsData.mousse;
+    
+    content.innerHTML = `
+        <div class="filling-photo-block">
+            <div class="filling-photo-wrapper">
+                <img src="${data.photo}" alt="Торт">
+                <div class="filling-photo-decor"></div>
+            </div>
+        </div>
+        <div class="filling-list-block">
+            <ul class="filling-list">
+                ${data.items.map((item, index) => `
+                    <li class="filling-item" style="animation-delay: ${index * 0.08}s">
+                        <div class="filling-bullet"></div>
+                        <div class="filling-item-content">
+                            <div class="filling-item-header">
+                                <span class="filling-item-name">${item.name}</span>
+                                <span class="filling-item-tag ${item.isNew ? 'filling-item-new' : ''}">${item.tag}</span>
+                            </div>
+                            <p class="filling-item-desc">${item.desc}</p>
+                            ${item.special ? `<p class="filling-item-special">✦ ${item.special}</p>` : ''}
+                        </div>
+                    </li>
+                `).join('')}
+            </ul>
+        </div>
+    `;
+}
+
+renderFillings('mousse');
+
+document.querySelectorAll('.filling-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.filling-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        renderFillings(tab.dataset.tab);
+    });
+});
+
+// ===== ORDER FORM DATA =====
+const orderFillingsData = {
+    tort: [
+        { group: 'Муссовые торты', options: ['Блюзберри — черника, ежевика, йогурт','Карамельная груша — бри, тоффи, лимон','Тропический ирис — манго, маракуйя, лайм','Малибу — банан, маракуйя, тропические фрукты','Малина-ваниль — малина, ваниль, меренга','Карамельный профитроль — грецкий орех, фундук','Пьемонт — абрикос, иузу, тоффи','Фисташковое мороженое — малина, вишня','Passion — кокос, маракуйя, манго','Манго-малина — кокос, малина, манго','Банановый брауни — тёмный шоколад, банан'] },
+        { group: 'Новинки', options: ['Торт «ТЕО» — шоколад, вафли','Пряный апельсин — тёмный шоколад, специи','Торт «Ягодная Магдалена» — малина, клубника'] }
+    ],
+    bento: [{ group: 'Бенто-торты', options: ['Фисташковый с ягодной начинкой','Медовик со сметанным кремом','Шоколадный с вишней или карамелью','Ванильный с ягодной начинкой','Ванильный с тропической начинкой','Красный бархат с ягодной начинкой'] }],
+    pastry: [{ group: 'Пирожные', options: ['Фруктовые пирожные','Ягодные шарики','Реалистичные фрукты','Кубики-башня','Розовый бант','Сердечки «Маме»','Мишки LOVE','Эклеры «Te Amo»','Меренговый рулет','Макаронс','Dubai Chocolate'] }]
+};
+const orderWeightData = {
+    tort: ['Торт 1 кг','Торт 1,5 кг','Торт 2 кг','Торт 2,5 кг','Торт 3 кг','Торт 3+ кг'],
+    bento: ['Бенто 400-500 г (10 см)','Бенто MAX 700-800 г (13 см)','Бенто XL 1,2-1,3 кг (16 см)'],
+    pastry: ['6 штук','12 штук','24 штуки','50 штук']
+};
+
+let currentDessertTab = 'cakes';
+let currentSubtab = 'Бенто-торты';
+
+function renderDesserts() {
+    const subtabsRow = document.getElementById('subtabsRow');
+    const data = dessertsData[currentDessertTab];
+    if (data.subtabs.length > 0) {
+        subtabsRow.innerHTML = data.subtabs.map((s, i) => `<button class="subtab ${i === 0 ? 'active' : ''}" data-sub="${s}">${s}</button>`).join('');
+        currentSubtab = data.subtabs[0];
+        subtabsRow.querySelectorAll('.subtab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                subtabsRow.querySelectorAll('.subtab').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentSubtab = btn.dataset.sub;
+                renderDessertCards();
+            });
+        });
+    } else { subtabsRow.innerHTML = ''; currentSubtab = 'Все'; }
+    renderDessertCards();
+}
+
+function renderDessertCards() {
+    const grid = document.getElementById('dessertsGrid');
+    const data = dessertsData[currentDessertTab];
+    const items = data.items[currentSubtab] || data.items['Все'] || [];
+    grid.innerHTML = items.map(item => `
+        <div class="dessert-card fade-up visible">
+            <div class="dessert-img">
+                <img src="${item.img}" alt="${item.name}">
+                <div class="dessert-img-overlay"></div>
+                ${item.badge ? `<span class="dessert-badge">${item.badge}</span>` : ''}
+            </div>
+            <div class="dessert-info">
+                <h3>${item.name}</h3>
+                <p>${item.desc}</p>
+                <div class="dessert-price">${item.price}</div>
+            </div>
+        </div>
+    `).join('');
+}
+
+renderDesserts();
+
+document.querySelectorAll('.dessert-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.dessert-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentDessertTab = tab.dataset.tab;
+        renderDesserts();
+    });
+});
+
+function updateOrderForm(type) {
+    const fillingSelect = document.getElementById('filling');
+    const weightSelect = document.getElementById('weight');
+    fillingSelect.innerHTML = '<option value="">Выберите начинку...</option>';
+    const fillingData = orderFillingsData[type] || orderFillingsData.tort;
+    fillingData.forEach(group => {
+        const optgroup = document.createElement('optgroup');
+        optgroup.label = group.group;
+        group.options.forEach(option => {
+            const opt = document.createElement('option');
+            opt.value = option; opt.textContent = option;
+            optgroup.appendChild(opt);
+        });
+        fillingSelect.appendChild(optgroup);
+    });
+    weightSelect.innerHTML = '<option value="">Выберите...</option>';
+    const weightData = orderWeightData[type] || orderWeightData.tort;
+    weightData.forEach(weight => {
+        const opt = document.createElement('option');
+        opt.value = weight; opt.textContent = weight;
+        weightSelect.appendChild(opt);
+    });
+}
+updateOrderForm('tort');
+
+document.querySelectorAll('input[name="type"]').forEach(radio => {
+    radio.addEventListener('change', (e) => updateOrderForm(e.target.value));
+});
+
+document.querySelectorAll('input[name="delivery"]').forEach(radio => {
+    radio.addEventListener('change', (e) => {
+        document.getElementById('deliveryDetails').style.display = e.target.value === 'delivery' ? 'grid' : 'none';
+    });
+});
+
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
+
+const burger = document.getElementById('burger');
+const nav = document.getElementById('nav');
+burger.addEventListener('click', () => { burger.classList.toggle('active'); nav.classList.toggle('open'); });
+nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { burger.classList.remove('active'); nav.classList.remove('open'); }));
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('visible', window.scrollY > 500));
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+document.getElementById('orderForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Заявка отправлена!';
+    btn.style.background = '#2d7a2d';
+    setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; e.target.reset(); updateOrderForm('tort'); }, 3000);
+});
+
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => { if (scrollY >= section.offsetTop - 100) current = section.getAttribute('id'); });
+    nav.querySelectorAll('a').forEach(link => { link.classList.remove('active'); if (link.getAttribute('href') === '#' + current) link.classList.add('active'); });
+});
+</script>
+</body>
+</html>
